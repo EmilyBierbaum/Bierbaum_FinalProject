@@ -1,0 +1,49 @@
+1
+2
+AddTag AquaTag Porpoise Dolphin FKWhale Whale
+AddNode CetaceaNode AquaTag
+ScaleTrees
+Run
+
+
+
+##########trees files already formatted in Nexus after exported from phylogenetic analyses
+########data files formatted in ASCII, animal names and their character states (D or G)
+######double check the text file is in plain text, names are spelled correctly, and identical to names in the tree file
+
+
+########## 1 for Multistate
+########Multistate model of evolution reconstructs how traits that adopt a number of discrete states evolve on phylogenies
+######it can also reconstruct ancestral states or test models of trait evolution
+####(Pagel, Meade et al.)
+
+
+########## 2 for MCMC (Markov chain Monte Carlo)
+########approximates posterior distribution of a parameter of interest
+
+
+########## AddTag AquaTag Porpoise Dolphin FKWhale Whale
+########identifies a node 
+######creates a tag with a unique name (AquaTag) with the list of taxa names that define that node
+#####AquaTag defined by Porpoise, Dolphin, FKWhale, and Whale
+
+
+########## AddNode CetaceaNode AquaTag
+########reconstructs the tag or ancestral state in MultiState models
+######reconstructs a node (CetaceaNode) in the output, and the name of a tag that defines the node
+####Two new columns will be added: CetaceaNode P(D) and CetaceaNode P(G)
+##displays the probability of reconstructing a D or a G at CetaceaNode
+
+
+########## ScaleTrees
+########no parameters required to set a mean branch length of 0.1 (what we did)
+######can scale the branch lengths of the phylogenetic tree by a given value (not what was done in this analysis)
+####gets rid of the effect of different branch lengths; then the analysis will focus more on parsimony
+
+
+########## Run
+########BayesTraits performs the analyses 
+
+
+########## two output files will be created (log and schedule)
+########## refer to README file for troubleshooting
